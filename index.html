@@ -7,40 +7,102 @@
 <link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<header>
+		 <header class="header">
+        <div class="left-header">
+            <img src="/mnt/data/ad059cb6-e7ad-4932-93a7-97b4ceb4c21e.png" alt="Your Profile Photo" class="profile-photo">
+            <h1 class="name-title">SURAJ KUMAR SAH</h1>
+        </div>
 
-<h1 class="YOURNAME">SURAJ KUMAR SAH</h1>
-<nav class="nav">
-<ul class="side">
-<li>About me</li>
-<li>Project</li>
-<li>Contact</li>
+        <nav class="right-header">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
 
-	
-</ul>
-</nav>
+        <!-- Mobile Menu Icon -->
+        <div class="menu-icon" onclick="toggleMenu()">
+            ☰
+        </div>
+    </header>
 
-<p>My name is Suraj Kumar Sah, and I am from Siraha district. I am currently studying for a Bachelor’s degree at Herald College Kathmandu, where I have chosen the faculty of BSc (Hons).</p>
+    <ul class="mobile-menu" id="mobileMenu">
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+    </ul>
+
+    <main>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                My name is Suraj Kumar Sah, and I am from Siraha district.
+                I am currently pursuing a Bachelor’s degree at Herald College Kathmandu
+                in BSc (Hons) Computer Science.
+            </p>
+        </section>
+        <section id="projects">
+            <h2>My Projects</h2>
+
+            <div class="project-list">
+
+                <article class="project-card">
+                    <img src="project1.jpg" alt="Project 1">
+                    <h3>Portfolio Website</h3>
+                    <p>Designed a responsive portfolio using HTML and CSS.</p>
+                </article>
+
+                <article class="project-card">
+                    <img src="project2.jpg" alt="Project 2">
+                    <h3>Todo App</h3>
+                    <p>A simple To-Do list built with JavaScript.</p>
+                </article>
+
+                <article class="project-card">
+                    <img src="project3.jpg" alt="Project 3">
+                    <h3>Weather App</h3>
+                    <p>App that shows weather using an online API.</p>
+                </article>
+
+            </div>
+        </section>
 
 
-<h2>My projects</h2>
-<img src="IMG">
-<h3>Contact Me</h3>
-<ul>
-	<li>Name</li>
-	<li>Email</li>
-	<li>Message</li>
-	</ul>
-	<button>Submit</button>
+        <section id="contact">
+            <h2>Contact Me</h2>
+
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Your name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Your email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" rows="5" placeholder="Your message" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        &copy; <span id="year"></span> Suraj. All rights reserved.
+    </footer>
+
+    <script>
+        
+        document.getElementById("year").textContent = new Date().getFullYear();
 
 
+        function toggleMenu() {
+            let menu = document.getElementById("mobileMenu");
+            menu.classList.toggle("active");
+        }
+    </script>
 
-
-</header>
-<footer>
-	&copy 2025sah.All right reserved.
-</footer>
-	</body>
-	</html>
-
-	
+</body>
+</html>
